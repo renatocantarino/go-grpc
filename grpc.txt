@@ -1,0 +1,39 @@
+1. framework criado pela google
+2. facilita a comunicação entre sistemas
+3. rapido, leve e interoperavel
+4. faz parte do CNCF
+
+
+detalhes
+
+1. comunicação entre microservicos
+2. mobile, beckend
+3. codegen automatico
+4. Stream biderecional http/2 [binario]
+
+
+Protocolos
+
+1. http2
+2. Protocol Buffer [protoBuff] => trafega binario [serializa/deserializa], com contrato definido
+3. Menor que o json
+4. serialização mais rapida, - cpu [menos recurso de rede]
+5. protoFile => schema do protoBuff
+
+
+http2
+
+1. binario
+2. Multiplex
+3. 2015, com o nome de Spdy
+4. server push [1 requisicao e carrega todos os assets e etc]
+5. Header comprimidor
+6. menos recurso de rede
+
+
+comunicação
+
+1. Unary : 1 request e 1 reponse [padrao]
+2. streaming : 1 request e N response 
+3. client stremming : N request e 1 reponse [200, 404]
+4. biderecional stremming : N request e N response

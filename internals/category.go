@@ -30,11 +30,11 @@ func (c *Category) Create(name, description string) (Category, error) {
 	return Category{ID: id, Name: name, Description: description}, nil
 }
 
-func (c *Category) FindByCourseId(courseId string) (Category, error) {
+func (c *Category) FindById(courseId string) (Category, error) {
 
 	var id, name, description string
 
-	err := c.DB.QueryRow("SELECT c.id, c.name, c.description from categories c join course co on c.id = co.category_id where co.id = $1 ", courseId).Scan(&id, &name, &description)
+	err := c.DB.QueryRow("SELECT c.id, c.name, c.description from categories where id = $1 ", courseId).Scan(&id, &name, &description)
 	if err != nil {
 		return Category{}, err
 	}
